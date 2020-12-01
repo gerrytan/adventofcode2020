@@ -22,9 +22,11 @@ const sumTwoNumsMap = {};
 rl.on("line", (line) => {
   const A = parseInt(line);
 
-  // B is the sum of second and third number that made a total of 2020
+  // B is the sum of second and third number that made a total of 2020 when added to A
   const B = 2020 - A;
 
+  // If B exists in sumTwoNumsMap, we have all three numbers, just need to
+  // multiply A with sumTwoNumsMap[B] to get to the final result
   if (sumTwoNumsMap[B]) {
     const mulpTwoNums = sumTwoNumsMap[B];
     console.log(`A: ${A}, B: ${B}, mulpThreeNums: ${mulpTwoNums * A}`);
@@ -32,6 +34,9 @@ rl.on("line", (line) => {
     return;
   }
 
+  // If we reach this point, the three numbers that sums to 2020 are not yet found
+  // so we keep populating the sumTwoNumsMap for fast access when the next numbers
+  // are visited
   for (const Cstr in numbersMap) {
     const C = parseInt(Cstr);
     if (A + C <= 2020) {
