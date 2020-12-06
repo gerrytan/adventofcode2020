@@ -7,6 +7,11 @@ const rl = readline.createInterface({
   terminal: false,
 });
 
-rl.on("line", (line) => {});
+rl.on("line", (line) => {
+  if (line.startsWith("#")) {
+    // ignore comments
+    return;
+  }
+});
 
 rl.on("close", () => {});
