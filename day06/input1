@@ -1,0 +1,16 @@
+# expected output: part1:11, part2: 6
+abc
+
+a
+b
+c
+
+ab
+ac
+
+a
+a
+a
+a
+
+b
